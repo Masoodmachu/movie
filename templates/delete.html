@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Add BOOK
+
+{% endblock %}
+
+{% block content %}
+<center>
+<h3 class="mt-2">DELETE</h3>
+    <h4>are you sure want to delete?</h4>
+    </center>
+<div class="container mt-5" >
+  <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <table>
+          <center>
+          <h4 style="color:red;">ARE YOU SURE?</h4>
+              </center>
+
+      </table>
+      <center>
+
+      <button class="btn btn-info" type="submit">Submit</button>
+          </center>
+  </form>
+
+</div>
+{% endblock %}

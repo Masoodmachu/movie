@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Detail
+
+{% endblock %}
+
+{% block content %}
+
+<!--<table class="table table-bordered table-striped table-hover border bg-white mt-5 ">-->
+<!--    <tr>-->
+<!--        <th>Name</th>-->
+<!--        <th>Description</th>-->
+<!--        <th>Year</th>-->
+<!--        <th>Image</th>-->
+<!--        <th>Edit</th>-->
+<!--        <th>Delete</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+
+<!--        <td>{{m.name}}</td>-->
+<!--        <td>{{m.desc}}</td>-->
+<!--        <td>{{m.year}}</td>-->
+<!--        <td><img src="{{m.image.url}}" height="250px" width="150px"></td>-->
+<!--        <td><a class="btn btn-danger" href="">Edit</a></td>-->
+<!--        <td><a class="btn btn-danger" href="">Delete</a></td>-->
+
+<!--    </tr>-->
+
+<!--</table>-->
+<div class="container mt-5">
+    <div >
+        <img src="{{m.image.url}}" height="250px" width="250px" style="float:left;">
+        <h4 style="color:red;margin-left:550px;">{{m.name}}&nbsp;({{m.year}})</h4>
+        <p style="margin-left:300px;">{{m.desc}}</p>
+        <a class="btn btn-warning" style="margin-left:250px;" href="{% url 'cinimaapp:update' m.id %}">Update</a>
+        <a class="btn btn-danger ms-5" href="{% url 'cinimaapp:delete' m.id %}">Delete</a>
+    </div>
+</div>
+
+
+{% endblock%}
